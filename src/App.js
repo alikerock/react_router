@@ -31,12 +31,17 @@ function Topic() {
         title: "Sorry",
         desc: "Not Found",
     };
-    for (let i = 0; i < contents.length; i++) {
-        if (contents[i].id === Number(topic_id)) {
-            selected_topic = contents[i];
-            break;
-        }
+    function getContent(tid) {
+        return contents.find((content) => content.id === Number(tid));
     }
+    selected_topic = getContent(topic_id);
+
+    // for (let i = 0; i < contents.length; i++) {
+    //     if (contents[i].id === Number(topic_id)) {
+    //         selected_topic = contents[i];
+    //         break;
+    //     }
+    // }
 
     return (
         <div>
